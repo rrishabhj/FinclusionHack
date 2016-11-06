@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:id="@+id/content_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/content_padding">
+
+            <!-- Dummy item to catch auto-focus -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount"
+                        android:textColor="@android:color/white" />
+
+                    <Space android:layout_width="10dp" />
+
+                    <EditText
+                        android:id="@+id/amount_edittext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="numberSigned"
+                        android:text="40"
+                        android:textColor="@android:color/white" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Source account"
+                        android:textColor="@android:color/white" />
+
+                    <Space android:layout_width="10dp" />
+
+                    <Spinner
+                        android:id="@+id/accounts_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </TableRow>
+
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recipient account number"
+                        android:textColor="@android:color/white" />
+
+                    <Space android:layout_width="10dp" />
+
+                    <EditText
+                        android:id="@+id/recipient_account_number_edittext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="numberSigned"
+                        android:maxLength="40"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recipient name"
+                        android:textColor="@android:color/white" />
+
+                    <Space android:layout_width="10dp" />
+
+                    <EditText
+                        android:id="@+id/recipient_name_edittext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLength="100"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white" />
+                </TableRow>
+
+                <TableRow>
+
+                    <Space android:layout_width="10dp" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recipient bank"
+                        android:textColor="@android:color/white" />
+
+                    <Space android:layout_width="10dp" />
+
+                    <Spinner
+                        android:id="@+id/banks_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OTP"
+                        android:textColor="@android:color/white" />
+
+                    <Space android:layout_width="10dp" />
+
+                    <EditText
+                        android:id="@+id/otp_edittext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="numberSigned"
+                        android:text="12345678"
+                        android:textColor="@android:color/white" />
+                </TableRow>
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/fundtransfer_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_bg"
+                android:text="Initiate Fund Transfer"
+                android:textColor="@color/background"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/logs_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

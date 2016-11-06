@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    app:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
@@ -88,15 +87,15 @@
                 android:layout_height="match_parent">
                 <Button
                     android:layout_height="wrap_content"
-                    android:id="@+id/button1"
+                    android:id="@+id/btn_fund_transfer"
                     android:layout_width="wrap_content"
-                    android:text="First Color">
+                    android:text="Fund Transfer">
                 </Button>
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btn_imt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="sec color">
+                    android:text="IMT">
                 </Button>
                 <Button
                     android:id="@+id/button3"

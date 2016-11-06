@@ -98,7 +98,7 @@
         <ListView
             android:id="@+id/lv_acc_detail"
             android:layout_width="match_parent"
-            android:layout_height="320dp"
+            android:layout_height="257dp"
             >
 
         </ListView>
