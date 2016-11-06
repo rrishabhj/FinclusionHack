@@ -12,9 +12,9 @@ import android.widget.Button;
 public class BaseFragment extends Fragment {
     public static final String ARGS_INSTANCE = "com.ncapdevi.sample.argsInstance";
 
-    Button mButton;
-    FragmentNavigation mFragmentNavigation;
-    int mInt = 0;
+    public Button mButton;
+    public FragmentNavigation mFragmentNavigation;
+    public int mInt = 0;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

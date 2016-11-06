@@ -1,16 +1,39 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+    }
+}
+
 apply plugin: 'com.android.application'
+
+repositories {
+    flatDir { dirs 'bomsdk' }
+}
 
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
-        applicationId "com.rishabh.github.finclusionhack"
+        applicationId "org.bom.india_hackaton"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile rootProject.file("bom_sdk.jks")
+            storePassword 'bomsdk123'
+            keyAlias 'bom_sdk'
+            keyPassword 'bomsdk123'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -20,6 +43,10 @@ android {
 }
 
 dependencies {
+
+    //bom-sdk
+    compile(name:'bom-sdk-hackaton', ext:'aar')
+
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -33,4 +60,20 @@ dependencies {
 
     //circular Image View
     compile 'de.hdodenhof:circleimageview:2.1.0'
+
+    //BOM-SDK required dependencies
+    compile 'io.reactivex:rxjava:1.1.8'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.trello:rxlifecycle:0.6.1'
+    compile 'com.trello:rxlifecycle-components:0.6.1'
+
+    //permissions
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+
+    compile 'com.google.code.gson:gson:2.7'
+
 }

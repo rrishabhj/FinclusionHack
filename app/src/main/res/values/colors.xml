@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#E91E63</color>
-    <color name="colorPrimaryDark">#C2185B</color>
-    <color name="colorAccent">#CDDC39</color>
+    <color name="colorPrimary">#00afe9</color>
+    <color name="colorPrimaryDark">#3dc6f4</color>
+    <color name="colorAccent">#007297</color>
+    <color name="quickstart_blue">#3FBAEA</color>
+    <color name="quickstart_gray_text">#AEAEAE</color>
+    <color name="background">#00afe9</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="black_color">#000000</color>
+
+    <!-- banking -->
+    <color name="banking_login_gray_bg">#363636</color>
 </resources>

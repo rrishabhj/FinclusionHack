@@ -49,7 +49,7 @@ public class AcountDetailsFragment extends BaseFragment {
 //
 //    }
 //
-//    @Override
+    @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_profile_acc_detail,container,false);
         return view;

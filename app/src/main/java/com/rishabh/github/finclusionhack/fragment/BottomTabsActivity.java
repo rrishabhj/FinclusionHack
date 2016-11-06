@@ -1,4 +1,4 @@
-package com.rishabh.github.finclusionhack;
+package com.rishabh.github.finclusionhack.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
 import com.ncapdevi.fragnav.FragNavController;
+import com.rishabh.github.finclusionhack.BaseFragment;
+import com.rishabh.github.finclusionhack.R;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 

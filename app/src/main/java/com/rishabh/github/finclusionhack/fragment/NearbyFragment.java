@@ -1,17 +1,22 @@
-package com.rishabh.github.finclusionhack;
+package com.rishabh.github.finclusionhack.fragment;
 
 import android.os.Bundle;
 import android.view.View;
 
-public class ChatFragment extends BaseFragment {
+import com.rishabh.github.finclusionhack.BaseFragment;
 
-    public static ChatFragment newInstance(int instance) {
+public class NearbyFragment extends BaseFragment {
+
+    public static NearbyFragment newInstance(int instance) {
         Bundle args = new Bundle();
         args.putInt(ARGS_INSTANCE, instance);
-        ChatFragment fragment = new ChatFragment();
+        NearbyFragment fragment = new NearbyFragment();
         fragment.setArguments(args);
         return fragment;
     }
+
+
+
     @Override
     public void onStart() {
         super.onStart();
@@ -19,7 +24,7 @@ public class ChatFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (mFragmentNavigation != null) {
-                    mFragmentNavigation.pushFragment(ChatFragment.newInstance(mInt+1));
+                    mFragmentNavigation.pushFragment(NearbyFragment.newInstance(mInt+1));
                 }
             }
         });

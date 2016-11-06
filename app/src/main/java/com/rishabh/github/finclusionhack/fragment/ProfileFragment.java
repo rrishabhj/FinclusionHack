@@ -1,4 +1,4 @@
-package com.rishabh.github.finclusionhack;
+package com.rishabh.github.finclusionhack.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.rishabh.github.finclusionhack.BaseFragment;
+import com.rishabh.github.finclusionhack.R;
 import com.rishabh.github.finclusionhack.profilefrag.AcountDetailsFragment;
 
 public class ProfileFragment extends BaseFragment {

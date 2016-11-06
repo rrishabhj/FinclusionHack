@@ -1,14 +1,17 @@
-package com.rishabh.github.finclusionhack;
+package com.rishabh.github.finclusionhack.fragment;
 
 import android.os.Bundle;
 import android.view.View;
 
-public class HomeFragment extends BaseFragment {
+import com.rishabh.github.finclusionhack.BaseFragment;
 
-    public static HomeFragment newInstance(int instance) {
+
+public class FavoriteFragment extends BaseFragment {
+
+    public static FavoriteFragment newInstance(int instance) {
         Bundle args = new Bundle();
         args.putInt(ARGS_INSTANCE, instance);
-        HomeFragment fragment = new HomeFragment();
+        FavoriteFragment fragment = new FavoriteFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -20,7 +23,7 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (mFragmentNavigation != null) {
-                    mFragmentNavigation.pushFragment(HomeFragment.newInstance(mInt+1));
+                    mFragmentNavigation.pushFragment(FavoriteFragment.newInstance(mInt+1));
                 }
             }
         });

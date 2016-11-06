@@ -1,19 +1,7 @@
 <resources>
-    <string name="app_name">FragNav</string>
-    <string name="title_activity_main2">Main2Activity</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="app_name">Banking</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_nav_drawer">NavDrawerActivity</string>
-    <string name="account_details">Account Details</string>
-    <string name="view_transaction_history">View Transaction History</string>
-    <string name="your_past_transaction_from_the_bank_account">Your Past transaction from the Bank Account</string>
-    <string-array name="account_actions">
-        <item>Bank Accounts</item>
-        <item>Update AadharCard</item>
-        <item>Edit Profile</item>
-        <item>Change Password</item>
-    </string-array>
+
+    <!-- Field validations -->
+    <string name="required_field">This is a required field</string>
 </resources>
