@@ -1,5 +1,6 @@
 package com.rishabh.github.finclusionhack.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
@@ -9,7 +10,8 @@ import android.view.ViewGroup;
 
 import com.rishabh.github.finclusionhack.BaseFragment;
 import com.rishabh.github.finclusionhack.R;
-import com.rishabh.github.finclusionhack.profilefrag.AcountDetailsFragment;
+import com.rishabh.github.finclusionhack.profile.AcountDetailsFragment;
+import com.rishabh.github.finclusionhack.profile.TransactionHistoryActivity;
 
 public class ProfileFragment extends BaseFragment {
 
@@ -42,7 +44,10 @@ public class ProfileFragment extends BaseFragment {
                 public void onClick(View view) {
                     if (mFragmentNavigation!=null){
                        // mFragmentNavigation.pushFragment(awfaf);
+                        Intent intent=new Intent(getActivity(), TransactionHistoryActivity.class);
+                        startActivity(intent);
                     }
+
                 }
             });
         }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rishabh.github.finclusionhack.base.BaseActivity;
+import com.rishabh.github.finclusionhack.fragment.BottomTabsActivity;
 import com.rishabh.github.finclusionhack.utils.RxUtils;
 
 import org.bom.android.container.models.BOM.BOMUser;
@@ -59,9 +60,9 @@ public class LoginActivity extends BaseActivity {
                     public void call(BankingUser bankingUser) {
                         hideProgressDialog();
 
-//                        Intent intentToLaunch = new Intent(LoginActivity.this, BankingHomeActivity.class);
-//                        LoginActivity.this.startActivity(intentToLaunch);
-//                        LoginActivity.this.finish();
+                        Intent intentToLaunch = new Intent(LoginActivity.this, BottomTabsActivity.class);
+                        LoginActivity.this.startActivity(intentToLaunch);
+                        LoginActivity.this.finish();
                     }
                 }, new Action1<Throwable>() {
                     @Override

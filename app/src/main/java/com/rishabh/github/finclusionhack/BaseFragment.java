@@ -1,5 +1,6 @@
 package com.rishabh.github.finclusionhack;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.widget.Button;
 
 public class BaseFragment extends Fragment {
     public static final String ARGS_INSTANCE = "com.ncapdevi.sample.argsInstance";
+    private ProgressDialog mProgressDialog;
 
     public Button mButton;
     public FragmentNavigation mFragmentNavigation;
@@ -42,4 +44,5 @@ public class BaseFragment extends Fragment {
     public interface FragmentNavigation {
         void pushFragment(Fragment fragment);
     }
+
 }

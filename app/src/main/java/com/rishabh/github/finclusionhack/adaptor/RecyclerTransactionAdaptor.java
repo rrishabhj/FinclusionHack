@@ -8,28 +8,36 @@ import android.widget.TextView;
 
 import com.rishabh.github.finclusionhack.R;
 
+import org.bom.android.container.models.banking.Transaction;
+
+import java.util.Date;
+import java.util.List;
+
 /**
  * Created by rishabh on 6/11/16.
  */
 
 public class RecyclerTransactionAdaptor extends RecyclerView.Adapter<RecyclerTransactionAdaptor.ViewHolder> {
 
-    private String[] mDataset;
+    private List<Transaction> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView mTextView;
+        public TextView mAmount,mBalance,mDate,mDescription;
         public ViewHolder(View v) {
             super(v);
-            mTextView = (TextView) v.findViewById(R.id.textView);
+            mAmount= (TextView) v.findViewById(R.id.tv_amount);
+            mBalance= (TextView) v.findViewById(R.id.tv_balance);
+            mDate= (TextView) v.findViewById(R.id.tv_date);
+            mDescription= (TextView) v.findViewById(R.id.tv_description);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecyclerTransactionAdaptor(String[] myDataset) {
+    public RecyclerTransactionAdaptor(List<Transaction> myDataset) {
         mDataset = myDataset;
     }
 
@@ -51,12 +59,28 @@ public class RecyclerTransactionAdaptor extends RecyclerView.Adapter<RecyclerTra
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mTextView.setText(mDataset[position]);
+        double amount= mDataset.get(position).Amount;
+            holder.mAmount.setText(""+amount);
 
+        double balance= mDataset.get(position).Balance;
+        if(balance>=0.0d) {
+            holder.mBalance.setText(""+balance);
+        }
+
+        String description=mDataset.get(position).Description;
+        if(!description.isEmpty()){
+            holder.mDescription.setText(""+description);
+        }
+
+
+        Date date= mDataset.get(position).Date;
+        if(date!=null) {
+            holder.mAmount.setText(""+date.toString());
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 }

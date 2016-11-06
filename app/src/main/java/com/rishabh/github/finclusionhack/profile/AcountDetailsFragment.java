@@ -1,4 +1,4 @@
-package com.rishabh.github.finclusionhack.profilefrag;
+package com.rishabh.github.finclusionhack.profile;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
