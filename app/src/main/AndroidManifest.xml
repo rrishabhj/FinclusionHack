@@ -25,12 +25,15 @@
         </activity>
 
         <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:launchMode="singleTask"/>
 
         <activity android:name=".fragment.BottomTabsActivity">
         </activity>
 
         <activity android:name=".profile.TransactionHistoryActivity"/>
+
+        <activity android:name=".profile.AccountInfoActivity"/>
 
     </application>
 

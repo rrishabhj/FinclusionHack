@@ -99,6 +99,7 @@
             android:id="@+id/lv_acc_detail"
             android:layout_width="match_parent"
             android:layout_height="257dp"
+            android:entries="@array/accMenu"
             >
 
         </ListView>
@@ -112,10 +113,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:onClick="signout">
 
         <TextView
             android:text="Sign Out"
+            android:onClick="logout"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

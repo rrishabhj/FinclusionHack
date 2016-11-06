@@ -593,4 +593,10 @@
         <item>Zonkey</item>
         <item>Zorse</item>
     </string-array>
+
+    <string-array name="accMenu">
+        <item>Account Details</item>
+        <item>Edit Profile</item>
+        <item>Update Adhar</item>
+    </string-array>
 </resources>
