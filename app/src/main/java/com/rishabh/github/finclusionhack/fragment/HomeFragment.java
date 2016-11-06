@@ -1,5 +1,6 @@
 package com.rishabh.github.finclusionhack.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,6 +10,8 @@ import android.widget.Button;
 
 import com.rishabh.github.finclusionhack.BaseFragment;
 import com.rishabh.github.finclusionhack.R;
+import com.rishabh.github.finclusionhack.home.FundTransferActivity;
+import com.rishabh.github.finclusionhack.home.ImtActivity;
 
 public class HomeFragment extends BaseFragment {
 
@@ -30,13 +33,16 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
 
+                Intent intenttoLaunch=new Intent(getActivity(), FundTransferActivity.class);
+                getContext().startActivity(intenttoLaunch);
             }
         });
 
         imt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intenttoLaunch=new Intent(getActivity(), ImtActivity.class);
+                getContext().startActivity(intenttoLaunch);
             }
         });
 
