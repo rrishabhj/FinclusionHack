@@ -2,16 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/background"
-    android:layout_height="match_parent">
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="312dp"
         android:layout_height="200dp"
-        android:src="@drawable/sdk_app_logo"
+        android:src="@mipmap/make_in_india"
         android:id="@+id/imageView"
         android:layout_marginLeft="70dp"
+        android:layout_gravity="center"
         android:layout_marginRight="70dp"
         android:layout_marginTop="70dp"
-        />
+        android:layout_weight="0.19" />
 </LinearLayout>

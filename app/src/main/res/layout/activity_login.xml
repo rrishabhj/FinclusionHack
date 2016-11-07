@@ -24,17 +24,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/content_padding"
+            android:paddingBottom="20dp"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
-            android:paddingTop="@dimen/content_padding">
+            android:paddingTop="20dp"
+            android:weightSum="1">
 
             <ImageView
                 android:id="@+id/logo_image"
-                android:layout_width="match_parent"
+                android:layout_width="349dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/sdk_app_logo" />
+                android:src="@drawable/pmjdylogo"
+                android:layout_gravity="center" />
 
             <EditText
                 android:id="@+id/account_number_textview"
@@ -61,7 +63,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/rounded_bg"
                 android:text="Login for Banking"
-                android:textColor="@color/background"
+                android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
         </LinearLayout>
