@@ -4,4 +4,8 @@
 
     <!-- Field validations -->
     <string name="required_field">This is a required field</string>
+    <string name="BTN_OK">OK</string>
+    <string name="BTN_CLOSE">Close</string>
+
+    <string name="system_message_header">System message</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.rishabh.github.finclusionhack.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.rishabh.github.finclusionhack.BaseFragment;
 import com.rishabh.github.finclusionhack.R;
+import com.rishabh.github.finclusionhack.apiai.AIDialogSampleActivity;
 
 public class ChatFragment extends BaseFragment {
 
@@ -35,7 +37,8 @@ public class ChatFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_chat,container,false);
-
+        Intent intentToLaunch=new Intent(getContext(), AIDialogSampleActivity.class);
+        getContext().startActivity(intentToLaunch);
         return view;
     }
 }

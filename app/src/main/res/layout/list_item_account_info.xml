@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:background="@drawable/rounded_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/name_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/quickstart_blue"
+        android:text="Name"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/aadhaar_number_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:text="Aadhaar Number"
+        android:textSize="16sp" />
+
+</LinearLayout>

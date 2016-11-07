@@ -22,4 +22,12 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
+
+    <style name="HackathonAppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="HackathonAppTheme.Dialog.Alert" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+
 </resources>
