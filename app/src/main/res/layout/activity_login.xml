@@ -45,7 +45,8 @@
                 android:layout_marginTop="30dp"
                 android:hint="Access Account"
                 android:inputType="number"
-                android:textColor="@color/white_color" />
+                android:textColor="@color/white_color"
+                android:text="4047560211" />
 
             <EditText
                 android:id="@+id/pin_textview"
@@ -54,7 +55,8 @@
                 android:layout_marginTop="10dp"
                 android:hint="PIN"
                 android:inputType="numberPassword"
-                android:textColor="@color/white_color" />
+                android:textColor="@color/white_color"
+                android:text="123456" />
 
             <Button
                 android:id="@+id/login_button"

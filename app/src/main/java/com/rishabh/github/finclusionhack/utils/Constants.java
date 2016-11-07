@@ -5,7 +5,7 @@ public final class Constants {
     public static final String API_SUCCESS_CODE = "000000";
 
     // Generates after you login to the system only
-    public static final String QUICKSTART_AUTHORIZATION = "AEzXsqpnM9FGnZjoVoWUgDdPoPla";
+    public static final String QUICKSTART_AUTHORIZATION = "AEzXsqpnM9FGnZjoVoWUgDdPoPIa";
 
     // Can be static for a given device
     public static final String QUICKSTART_DEVICE_ID = "123456789009876543210002";

@@ -10,12 +10,11 @@ import com.rishabh.github.finclusionhack.utils.RxUtils;
 
 import org.bom.android.container.models.banking.BankAccount;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.functions.Action1;
 
 public class AccountInfoActivity extends BaseBankingActivity {
-    @BindView(R.id.accountinfo_textview)
+    //@BindView(R.id.accountinfo_textview)
     TextView mAccountInfoTextView;
 
     @Override
@@ -39,6 +38,7 @@ public class AccountInfoActivity extends BaseBankingActivity {
                     public void call(BankAccount bankAccount) {
                         hideProgressDialog();
                         mAccountInfoTextView.setText(App.getSharedGson().toJson(bankAccount));
+
                     }
                 }, new Action1<Throwable>() {
                     @Override

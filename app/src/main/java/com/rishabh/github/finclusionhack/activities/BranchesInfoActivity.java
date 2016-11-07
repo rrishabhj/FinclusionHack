@@ -93,9 +93,10 @@ public class BranchesInfoActivity extends BaseActivity implements LocationsListA
 
             @Override
             protected void onPostExecute(LocationsList locationsList) {
-                hideProgressDialog();
-                populateBranches(locationsList);
-
+                if(locationsList!=null) {
+                    hideProgressDialog();
+                    populateBranches(locationsList);
+                }
             }
         }).execute();
     }
