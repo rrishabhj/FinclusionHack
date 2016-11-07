@@ -3,6 +3,7 @@ package com.rishabh.github.finclusionhack.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import com.rishabh.github.finclusionhack.activities.BranchesInfoActivity;
 
 public class NearbyFragment extends BaseFragment {
 
+    CardView cv_branch,cv_atm ;
+
     public static NearbyFragment newInstance(int instance) {
         Bundle args = new Bundle();
         args.putInt(ARGS_INSTANCE, instance);
@@ -24,27 +27,12 @@ public class NearbyFragment extends BaseFragment {
     }
 
 
-//
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        mButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mFragmentNavigation != null) {
-//                    mFragmentNavigation.pushFragment(NearbyFragment.newInstance(mInt+1));
-//                }
-//            }
-//        });
-//        mButton.setText(getClass().getSimpleName() + " " + mInt);
-//    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            View view=inflater.inflate(R.layout.fragment_nearby,container,false);
+    public void onStart() {
+        super.onStart();
 
-        view.findViewById(R.id.get_branches_button)
-                .setOnClickListener(new View.OnClickListener() {
+        cv_branch.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intentToLaunch = new Intent(getContext(), BranchesInfoActivity.class);
@@ -53,8 +41,7 @@ public class NearbyFragment extends BaseFragment {
                 });
 
         //get atms button
-        view.findViewById(R.id.get_atms_button)
-                .setOnClickListener(new View.OnClickListener() {
+        cv_atm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intentToLaunch = new Intent(getContext(), ATMsInfoActivity.class);
@@ -62,7 +49,13 @@ public class NearbyFragment extends BaseFragment {
                     }
                 });
 
-        return view;
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            View view=inflater.inflate(R.layout.fragment_nearby,container,false);
+            cv_branch= (CardView) view.findViewById(R.id.cv_branches);
+            cv_atm = (CardView) view.findViewById(R.id.cv_atm);
+        return view;
+    }
 }

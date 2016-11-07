@@ -65,6 +65,9 @@
         <activity android:name=".apiai.AIDialogSampleActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
+        <activity android:name=".activities.BranchesInfoActivity"/>
+        <activity android:name=".activities.ATMsInfoActivity"/>
+
     </application>
 
 </manifest>
