@@ -24,14 +24,13 @@ public class TransactionHistoryActivity extends BaseBankingActivity {
 
     RecyclerView recyclerView;
     List<Transaction> transaction_dataset;
+    RecyclerTransactionAdaptor adaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.fragment_profile_transaction);
         recyclerView= (RecyclerView) findViewById(R.id.rv_transaction);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
 
         // transaction adaptor
         //load transaction history
@@ -61,8 +60,9 @@ public class TransactionHistoryActivity extends BaseBankingActivity {
 
 
     private void setTransactions(List<Transaction> transactions) {
-       transaction_dataset=transactions;
-        RecyclerTransactionAdaptor adaptor=new RecyclerTransactionAdaptor(transaction_dataset);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        transaction_dataset=transactions;
+        adaptor=new RecyclerTransactionAdaptor(transaction_dataset);
         recyclerView.setAdapter(adaptor);
     }
 

@@ -60,12 +60,15 @@ public class RecyclerTransactionAdaptor extends RecyclerView.Adapter<RecyclerTra
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         double amount= mDataset.get(position).Amount;
-            holder.mAmount.setText(""+amount);
+        String am=String.format("%.2f",amount);
+
+        holder.mAmount.setText(""+am);
 
         double balance= mDataset.get(position).Balance;
-        if(balance>=0.0d) {
-            holder.mBalance.setText(""+balance);
-        }
+        String bal=String.format("%.2f",balance);
+
+            holder.mBalance.setText(""+bal);
+
 
         String description=mDataset.get(position).Description;
         if(!description.isEmpty()){

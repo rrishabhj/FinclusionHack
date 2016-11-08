@@ -28,29 +28,29 @@ public class ProfileFragment extends BaseFragment {
     @Override
     public void onStart() {
         super.onStart();
-        if (accDetail != null) {
-            accDetail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (mFragmentNavigation != null) {
-                        mFragmentNavigation.pushFragment(AcountDetailsFragment.newInstance(0));
-                    }
-                }
-            });
-           // test.setText(getClass().getSimpleName() + " " + mInt);
-        }else if (transactionDetail!=null){
-            transactionDetail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (mFragmentNavigation!=null){
-                       // mFragmentNavigation.pushFragment(awfaf);
-                        Intent intent=new Intent(getActivity(), TransactionHistoryActivity.class);
-                        startActivity(intent);
-                    }
-
-                }
-            });
-        }
+//        if (accDetail != null) {
+//            accDetail.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    if (mFragmentNavigation != null) {
+//                        mFragmentNavigation.pushFragment(AcountDetailsFragment.newInstance(0));
+//                    }
+//                }
+//            });
+//           // test.setText(getClass().getSimpleName() + " " + mInt);
+//        }else if (transactionDetail!=null){
+//            transactionDetail.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    if (mFragmentNavigation!=null){
+//                       // mFragmentNavigation.pushFragment(awfaf);
+//                        Intent intent=new Intent(getActivity(), TransactionHistoryActivity.class);
+//                        startActivity(intent);
+//                    }
+//
+//                }
+//            });
+//        }
 
     }
 
@@ -60,6 +60,27 @@ public class ProfileFragment extends BaseFragment {
         //test= (Button) view.findViewById(R.id.btn_profile_main);
         accDetail= (CardView) view.findViewById(R.id.cv_acc_detail);
         transactionDetail= (CardView) view.findViewById(R.id.cv_transaction_detail);
+
+        accDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mFragmentNavigation != null) {
+                    mFragmentNavigation.pushFragment(AcountDetailsFragment.newInstance(0));
+                }
+            }
+        });
+
+        transactionDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mFragmentNavigation!=null){
+                    // mFragmentNavigation.pushFragment(awfaf);
+                    Intent intent=new Intent(getActivity(), TransactionHistoryActivity.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
         return view;
     }
 }
