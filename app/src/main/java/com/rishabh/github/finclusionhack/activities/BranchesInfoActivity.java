@@ -39,6 +39,10 @@ public class BranchesInfoActivity extends BaseActivity implements LocationsListA
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locations_list);
 
+        getSupportActionBar().setTitle("Branch Locations");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         initializeRecyclerView();
 

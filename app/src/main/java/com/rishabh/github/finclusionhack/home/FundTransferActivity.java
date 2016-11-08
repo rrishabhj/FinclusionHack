@@ -1,10 +1,7 @@
 package com.rishabh.github.finclusionhack.home;
 
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -56,7 +53,6 @@ public class FundTransferActivity extends BaseBankingActivity {
 
     private static final String FIELD_NOTES_TO_SELF = "Sample notes to self";
     private static final String FIELD_NOTES_TO_RECIPIENT = "Sample notes to recipient";
-    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +60,7 @@ public class FundTransferActivity extends BaseBankingActivity {
         setContentView(R.layout.activity_fund_transfer);
         ButterKnife.bind(this);
 
-        initializeToolbar("Fund Transfer", true);
+        //initializeToolbar("Fund Transfer", true);
         initializeFundTransfer();
         mRecipientNameEditText.addTextChangedListener(new AllowOnlyBomWhiteListedCharactersTextWatcher());
         mRecipentAccountNumberEditText.addTextChangedListener(new AllowOnlyBomWhiteListedCharactersTextWatcher());
@@ -73,7 +69,6 @@ public class FundTransferActivity extends BaseBankingActivity {
     private void initializeFundTransfer() {
 
         mSubmitButton.setEnabled(false);
-        progressDialog=ProgressDialog.show(this,"Bank","initializing Fund Transfer..");
 
         log("INFO: initializing Fund Transfer..");
         App.getClientContainer().getBankingClient().getFundTransferClient().initializeObservable()
@@ -118,7 +113,6 @@ public class FundTransferActivity extends BaseBankingActivity {
                         ArrayAdapter bankAdapter = new ArrayAdapter<>(FundTransferActivity.this, R.layout.spinner_item, banks);
                         mBanksSpinner.setAdapter(bankAdapter);
                         mSubmitButton.setEnabled(true);
-                        progressDialog.dismiss();
                     }
                 }, new Action1<Throwable>() {
                     @Override
@@ -159,7 +153,6 @@ public class FundTransferActivity extends BaseBankingActivity {
                 recipientName, recipientBank,
                 SDKUtils.sanitizeText(FIELD_NOTES_TO_SELF), SDKUtils.sanitizeText(FIELD_NOTES_TO_RECIPIENT));
 
-        progressDialog.show(this,"Banking",dialog);
 
 //        log("INFO: starting Fund Transfer with amount: %s, source account: %s, recipient account number: %s, " +
 //                        "recipient name: %s, " +
@@ -181,43 +174,14 @@ public class FundTransferActivity extends BaseBankingActivity {
                     public void call(BomResponse bomResponse) {
                         switch (bomResponse.Action) {
                             case SHOW_WAITING_FOR_SURECHECK_OR_OTP_SCREEN:
-                                progressDialog.dismiss();
-                                progressDialog.show(FundTransferActivity.this,"Banking","Waiting for OTP");
 //                                log("ACTION: client app should SHOW UI or indicator that app is waiting for surecheck or OTP");
                                 break;
                             case HIDE_WAITING_FOR_SURECHECK_SCREEN:
-                                progressDialog.dismiss();
                                 log("ACTION: client app should HIDE UI or indicator that app is waiting for surecheck or OTP");
                                 break;
                             case REQUIRE_OTP:
 
                                 log("ACTION: client app should display and prompt user to enter OTP");
-
-                                AlertDialog.Builder builder = new AlertDialog.Builder(FundTransferActivity.this);
-                                builder.setTitle("OTP Check");
-
-                                // Set up the input
-                                final EditText input = new EditText(FundTransferActivity.this);
-                                // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-                                input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                                builder.setView(input);
-
-                                // Set up the buttons
-                                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        m_Text = input.getText().toString();
-                                        confirmFundTransferOTP(m_Text);
-                                    }
-                                });
-                                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.cancel();
-                                    }
-                                });
-
-                                builder.show();
 
 
                                 //show UI for OTP entry
@@ -227,12 +191,6 @@ public class FundTransferActivity extends BaseBankingActivity {
                             case SUCCESS:
                                 log("INFO: Fund Transfer is successful");
 
-                                new AlertDialog.Builder(FundTransferActivity.this)
-                                        .setTitle("Banking")
-                                        .setMessage("Fund Transfer is Successful")
-                                        .setNegativeButton("close",null)
-                                        .setCancelable(false)
-                                        .show();
 
                                 break;
                         }
@@ -241,7 +199,6 @@ public class FundTransferActivity extends BaseBankingActivity {
                     @Override
                     public void call(Throwable error) {
                         log("INFO: Fund Transfer failed with error: " + error.getLocalizedMessage());
-                        progressDialog.dismiss();
                     }
                 });
     }
@@ -250,7 +207,6 @@ public class FundTransferActivity extends BaseBankingActivity {
         log("INFO: user enters otp: %s", OTP);
         log("INFO: verifying otp..");
 
-        progressDialog.show(FundTransferActivity.this,"OTP","verifying otp..");
         App.getClientContainer().getBankingClient().getFundTransferClient().confirmOTPObservable(OTP)
                 .compose(RxUtils.<BomResponse>applyDefaultSchedulers(this))
                 .subscribe(new Action1<BomResponse>() {
@@ -258,10 +214,9 @@ public class FundTransferActivity extends BaseBankingActivity {
                     public void call(BomResponse bomResponse) {
                         switch (bomResponse.Action) {
                             case FAILED_OTP_SHOULD_RETRY:
-                                progressDialog.dismiss();
 
                                 new AlertDialog.Builder(FundTransferActivity.this)
-                                        .setTitle("OTP")
+                                         .setTitle("OTP")
                                         .setMessage("OTP Verification failed")
                                         .setNegativeButton("close",null)
                                         .setCancelable(false)
@@ -270,7 +225,6 @@ public class FundTransferActivity extends BaseBankingActivity {
                                 break;
                             case SUCCESS_OTP:
 
-                                progressDialog.dismiss();
                                 log("INFO: OTP verification is successful");
                                 break;
                         }

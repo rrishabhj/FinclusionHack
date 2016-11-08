@@ -39,7 +39,10 @@ public class ATMsInfoActivity extends BaseActivity implements LocationsListAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locations_list);
 
-
+        getSupportActionBar().setTitle("ATM Location");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         initializeRecyclerView();
 

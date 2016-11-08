@@ -82,7 +82,7 @@
                 android:id="@+id/imageView3" />
 
             <TextView
-                android:text="view_transaction_history"
+                android:text="Viewtransaction History"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textSize="20dp"
                 android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                 android:id="@+id/textView6" />
 
             <TextView
-                android:text="your_past_transaction_from_the_bank_account"
+                android:text="your past transaction from the bank account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView7"

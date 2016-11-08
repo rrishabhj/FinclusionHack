@@ -6,8 +6,6 @@
     android:orientation="vertical"
     tools:ignore="MissingPrefix">
 
-    <include layout="@layout/toolbar" />
-
     <ScrollView
         android:id="@+id/content_scrollview"
         android:layout_width="match_parent"
