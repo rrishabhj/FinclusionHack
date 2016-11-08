@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <TextView
+            android:layout_width="201dp"
+            android:layout_height="match_parent"
+            android:text="Atal Pension Yojna"
+            android:textSize="70px"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/apy"
+            android:id="@+id/imageView"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="30px"
+        android:text="The Government of India is extremely concerned about the old age income
+security of the working poor and is focused on encouraging and enabling them to join
+the National Pension System (NPS). To address the longevity risks among the
+workers in unorganised sector and to encourage the workers in unorganised sector
+to voluntarily save for their retirement, who constitute 88% of the total labour force of
+47.29 crore as per the 66th Round of NSSO Survey of 2011-12, but do not have any
+formal pension provision, the Government had started the Swavalamban Scheme in
+2010-11. However, coverage under Swavalamban Scheme is inadequate mainly due
+to lack of guaranteed pension benefits at the age of 60." />
+     </LinearLayout>
+

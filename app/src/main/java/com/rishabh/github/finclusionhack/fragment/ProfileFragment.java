@@ -58,7 +58,7 @@ public class ProfileFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_profile_main,container,false);
         //test= (Button) view.findViewById(R.id.btn_profile_main);
-        accDetail= (CardView) view.findViewById(R.id.cv_acc_detail);
+        accDetail= (CardView) view.findViewById(R.id.cv_apy);
         transactionDetail= (CardView) view.findViewById(R.id.cv_transaction_detail);
 
         accDetail.setOnClickListener(new View.OnClickListener() {

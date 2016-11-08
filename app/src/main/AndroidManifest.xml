@@ -68,6 +68,9 @@
         <activity android:name=".activities.BranchesInfoActivity"/>
         <activity android:name=".activities.ATMsInfoActivity"/>
 
+        <activity android:name=".Apy"/>
+        <activity android:name=".Pmjdy"/>
+
     </application>
 
 </manifest>
